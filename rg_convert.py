@@ -77,5 +77,5 @@ def convert(
         else:
             to_csv(filtered_df, outfile_prefix, particle, "train")
 
-convert('input/global_train.root', 'output/v1', val_test_split=False)
-convert('input/global_test.root' , 'output/v1', val_test_split=True , seed=42)
+convert('data_root/global_train.root', 'data_csv/v1', val_test_split=False)
+convert('data_root/global_test.root' , 'data_csv/v1', val_test_split=True , seed=42)
