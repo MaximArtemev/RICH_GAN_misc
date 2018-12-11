@@ -24,7 +24,7 @@ X_test = pd.read_csv(input_fname_test, usecols=config['X_cols'])
 sys.path.append(submission_program_path)
 import submission_model
 
-model = submission_model.model()
+model = submission_model.Model()
 
 model.fit(X_train, Y_train)
 Y_test_pred = model.predict(X_test)
