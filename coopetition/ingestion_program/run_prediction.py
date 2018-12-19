@@ -11,9 +11,9 @@ config_fname = os.path.join(ingestion_program_path, 'config.yml')
 with open(config_fname) as f:
     config = yaml.load(f)
 
-input_fname_train = os.path.join(ref_data_path, config['input_train'])
-input_fname_test  = os.path.join(ref_data_path, config['input_test' ])
-output_fname_test_pred = os.path.join(output_path, config['output_pred'])
+input_fname_train = os.path.join(ref_data_path, config['training_file'])
+input_fname_test  = os.path.join(ref_data_path, config['scoring_file' ])
+output_fname_test_pred = os.path.join(output_path, config['prediction_file'])
 
 df_train = pd.read_csv(input_fname_train)
 X_train = df_train[config['X_cols']]

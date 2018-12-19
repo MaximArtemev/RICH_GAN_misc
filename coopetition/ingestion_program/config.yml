@@ -1,5 +1,0 @@
-input_train: "v1_pion_train.csv"
-input_test: "v1_pion_validation.csv"
-output_pred: "v1_pion_validation_pred.csv"
-X_cols: ['TrackP', 'TrackEta', 'NumLongTracks']
-Y_cols: ['RichDLLe', 'RichDLLk', 'RichDLLmu', 'RichDLLp', 'RichDLLbt']
