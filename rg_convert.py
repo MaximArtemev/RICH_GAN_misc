@@ -55,13 +55,15 @@ def convert(
         outfile_prefix,
         val_test_split,
         val_size=0.2,
-        seed=None
+        seed=None,
+        drop_pt=False
         ):
     if val_test_split:
         assert seed is not None
     raw_df = read_raw_file(infile)
     eta_branch_name = add_eta(raw_df)
-    raw_df.drop(columns=BRANCH_PT, inplace=True)
+    if drop_pt:
+        raw_df.drop(columns=BRANCH_PT, inplace=True)
     
     for pdg, particle in particles.items():
         filtered_df = filter_ptype(raw_df, pdg)
