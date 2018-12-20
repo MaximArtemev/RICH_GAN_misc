@@ -36,4 +36,4 @@ else:
     output_filename = os.path.join(output_dir, 'scores.txt')
 
     with open(output_filename, 'w') as output_file:
-        output_file.write("KS: {}".format(score)
+        output_file.write("KS: {}".format(score))
