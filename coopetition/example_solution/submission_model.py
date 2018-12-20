@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 class Model:
-    def train(self, X, Y):
+    def fit(self, X, Y):
         self.means = {}
         self.stds = {}
         for col in Y.columns:

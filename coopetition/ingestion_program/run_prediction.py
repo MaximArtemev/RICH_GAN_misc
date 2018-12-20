@@ -4,16 +4,16 @@ import yaml
 import numpy as np
 import pandas as pd
 
-ingestion_program_path, submission_program_path, ref_data_path, output_path = sys.argv[1:]
+ingestion_program_path, submission_program_path, ref_data_path, train_data_path, output_path = sys.argv[1:]
 
 config_fname = os.path.join(ingestion_program_path, 'config.yml')
 
 with open(config_fname) as f:
     config = yaml.load(f)
 
-input_fname_train = os.path.join(ref_data_path, config['training_file'])
-input_fname_test  = os.path.join(ref_data_path, config['scoring_file' ])
-output_fname_test_pred = os.path.join(output_path, config['prediction_file'])
+input_fname_train      = os.path.join(train_data_path, config['training_file'  ])
+input_fname_test       = os.path.join(ref_data_path  , config['scoring_file'   ])
+output_fname_test_pred = os.path.join(output_path    , config['prediction_file'])
 
 df_train = pd.read_csv(input_fname_train)
 X_train = df_train[config['X_cols']]

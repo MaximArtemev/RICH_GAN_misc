@@ -1,0 +1,44 @@
+title: LHCb RICH Fast Simulation
+description: This is a competition to develop an efficient and accurate algorithm
+  for fast LHCb RICH detector simulation.
+start_date: 2018-12-01 00:00:00+00:00
+end_date: null
+competition_docker_image: ''
+has_registration: true
+force_submission_to_leaderboard: false
+disallow_leaderboard_modifying: false
+enable_detailed_results: false
+admin_names: null
+html:
+  data: data.html
+  evaluation: evaluation.html
+  get_starting_kit: get_starting_kit.html
+  overview: overview.html
+  terms: terms.html
+phases:
+  0:
+    auto_migration: false
+    color: white
+    description: ''
+    ingestion_program: ingestion_program.zip
+    input_data: data_train.zip
+    is_scoring_only: false
+    label: Single-particle
+    max_submissions: 999
+    max_submissions_per_day: 5
+    phasenumber: 1
+    reference_data: data_validation.zip
+    scoring_program: scoring_program.zip
+    start_date: 2018-12-01 00:00:00+00:00
+    starting_kit: example_solution.zip
+leaderboard:
+  columns:
+    KS:
+      label: KS
+      leaderboard: &id001
+        label: Results
+        rank: 1
+      rank: 1
+      sort: asc
+  leaderboards:
+    Results: *id001

@@ -6,9 +6,12 @@ import pandas as pd
 
 from scipy.stats import ks_2samp
 
-input_dir, output_dir = sys.argv[1:]
 
-with open('config.yml') as f:
+scoring_program_path, input_dir, output_dir = sys.argv[1:]
+
+config_file_name = os.path.join(scoring_program_path, 'config.yml')
+
+with open(config_file_name) as f:
     config = yaml.load(f)
 
 submit_dir = os.path.join(input_dir, 'res')
