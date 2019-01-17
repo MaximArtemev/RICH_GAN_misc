@@ -33,8 +33,18 @@ else:
     # prediction[config['X_cols']] = reference[config['X_cols']]
 
     score = 0
-    for col in config['Y_cols']:
-        score = max(score, ks_2samp(reference[col], prediction[col])[0])
+    kmax = 50
+    w_normal = np.random.normal(size=(kmax, len(config['Y_cols'])))
+    reference = reference.copy()[config['Y_cols']].values
+    prediction = prediction.copy()[config['Y_cols']].values
+    for k in range(kmax):
+        score = max(score,
+                    ks_2samp(
+                        np.sum(w_normal[k] * reference, axis=1), 
+                        np.sum(w_normal[k] * prediction, axis=1)
+                    )[0]
+                   )
+    return score
 
     output_filename = os.path.join(output_dir, 'scores.txt')
 
