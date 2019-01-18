@@ -2,8 +2,10 @@ data_root/
 data_csv/
 coopetition/bundle/
 *.tgz
-.ipynb_checkpoints/*
+.ipynb_checkpoints
 kaons
 pions
 v1_kaon_train.csv
 v1_pion_train.csv
+.*
+RICH_mrartemev*
