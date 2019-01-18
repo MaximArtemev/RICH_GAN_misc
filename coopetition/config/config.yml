@@ -1,5 +1,6 @@
 training_file: "v1_pion_train.csv"
 scoring_file: "v1_pion_validation.csv"
+scoring_iter: 100
 prediction_file: "v1_pion_validation_pred.csv"
 X_cols: ['TrackP', 'TrackPt', 'TrackEta', 'NumLongTracks']
 Y_cols: ['RichDLLe', 'RichDLLk', 'RichDLLmu', 'RichDLLp', 'RichDLLbt']
