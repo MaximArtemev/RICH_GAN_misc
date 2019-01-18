@@ -44,7 +44,6 @@ else:
                         np.sum(w_normal[k] * prediction, axis=1)
                     )[0]
                    )
-    return score
 
     output_filename = os.path.join(output_dir, 'scores.txt')
 
