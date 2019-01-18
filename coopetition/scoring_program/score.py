@@ -33,11 +33,11 @@ else:
     # prediction[config['X_cols']] = reference[config['X_cols']]
 
     score = 0
-    kmax = 50
-    w_normal = np.random.normal(size=(kmax, len(config['Y_cols'])))
-    reference = reference.copy()[config['Y_cols']].values
-    prediction = prediction.copy()[config['Y_cols']].values
-    for k in range(kmax):
+    cols = config['Y_cols'] + config['X_cols']
+    w_normal = np.random.normal(size=(config['n_slices'], len(cols)))
+    reference = reference[cols].values
+    prediction = prediction[cols].values
+    for k in range(config['n_slices']):
         score = max(score,
                     ks_2samp(
                         np.sum(w_normal[k] * reference, axis=1), 
